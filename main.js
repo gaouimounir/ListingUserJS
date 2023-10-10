@@ -11,15 +11,20 @@ fetch("https://reqres.in/api/users?")
     card.classList.add("card");
     const cardBody = document.createElement("div");
     cardBody.classList.add("cardBody");
-    const cardTitle = document.createElement("p");
+    const cardTitle = document.createElement("h5");
     cardTitle.classList.add("cardTitle");
     const cardImg = document.createElement("img");
+    cardImg.src = "https://reqres.in/img/faces/1-image.jpg";
     cardImg.classList.add("cardImg");
 
-    let name = document.createElement("h2");
-    name.innerHTML = data.data[0].first_name + " " + data.data[0].last_name;
+    cardTitle.innerHTML =
+      data.data[0].first_name + " " + data.data[0].last_name;
 
-    root.appendChild(name);
+    cardImg.innerHTML = data.data[0].avatar;
+
+    root.appendChild(card);
+    card.appendChild(cardImg);
+    card.appendChild(cardTitle);
   })
   .catch((error) => {
     // Gérez les erreurs ici
