@@ -10,7 +10,7 @@ fetch("https://reqres.in/api/users?per_page=12")
   .then((response) => response.json())
   .then((data) => {
     // Utilisez les données récupérées de l'API
-    console.log(data);
+    // console.log(data);
 
     for (let i = 0; i < data.data.length; i++) {
       const user = data.data[i];
