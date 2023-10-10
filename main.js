@@ -1,45 +1,12 @@
-/* let root = document.getElementById("root");
-
-fetch("https://reqres.in/api/users?")
-  .then((response) => response.json())
-  .then((data) => {
-    // Utilisez les données récupérées de l'API
-    console.log(data);
-
-    // Affiche dans le HTML, la données récupéré sur l'API
-    for (let i = 0; i < data.data.length; i++) {
-      const user = data.data[i];
-
-      const btn = document.createElement("button");
-      btn.setAttribute("data-bs-target", "#exampleModal");
-      const card = document.createElement("div");
-      card.classList.add("card");
-      card.setAttribute("id", "exampleModal");
-      const cardBody = document.createElement("div");
-      cardBody.classList.add("cardBody");
-      const cardTitle = document.createElement("h5");
-      cardTitle.classList.add("cardTitle");
-      const cardImg = document.createElement("img");
-      cardImg.classList.add("cardImg");
-
-      cardImg.src = user.avatar;
-      cardTitle.innerHTML = user.first_name + " " + user.last_name;
-
-      root.appendChild(card);
-      card.appendChild(btn);
-      card.appendChild(cardImg);
-      card.appendChild(cardTitle);
-    }
-  })
-  .catch((error) => {
-    // Gérez les erreurs ici
-    console.error("Erreur :", error);
-  });
- */
-
 let root = document.getElementById("root");
 
-fetch("https://reqres.in/api/users?")
+const pageTitle = document.createElement("h1");
+pageTitle.classList.add("title");
+pageTitle.textContent = "All Users TechCorp Inc.";
+
+document.body.insertBefore(pageTitle, document.body.firstChild);
+
+fetch("https://reqres.in/api/users?per_page=12")
   .then((response) => response.json())
   .then((data) => {
     // Utilisez les données récupérées de l'API
@@ -96,7 +63,6 @@ fetch("https://reqres.in/api/users?")
       modalLastname.textContent = " Last Name: " + user.last_name;
       const modalEmail = document.createElement("p");
       modalEmail.textContent = " E mail: " + user.email;
-      // Ajoutez d'autres éléments pour afficher d'autres informations ici
 
       modalContent.appendChild(closeBtn);
       modalContent.appendChild(modalTitle);
@@ -104,13 +70,11 @@ fetch("https://reqres.in/api/users?")
       modalContent.appendChild(modalFirstname);
       modalContent.appendChild(modalLastname);
       modalContent.appendChild(modalEmail);
-      // Ajoutez d'autres éléments générés ici
 
       modal.appendChild(modalContent);
 
       document.body.appendChild(modal);
 
-      // Gestionnaire d'événement pour le bouton de fermeture
       closeBtn.addEventListener("click", function () {
         document.body.removeChild(modal);
       });
@@ -118,6 +82,5 @@ fetch("https://reqres.in/api/users?")
     }
   })
   .catch((error) => {
-    // Gérez les erreurs ici
     console.error("Erreur :", error);
   });

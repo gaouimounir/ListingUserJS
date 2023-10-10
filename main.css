@@ -1,20 +1,58 @@
+body {
+    background: linear-gradient(135deg, #FFC0CB, #00BFFF);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+  }
+
 #root{
-    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-   
+    justify-content: space-between;
 }
 
-.card{
-    background-color: blueviolet;
+.title{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: solid;
+    justify-content: center;
+    margin-bottom: 5%;
 }
 
-/* Styles pour la modal */
+  .card {
+    background: linear-gradient(135deg, #baeab0, #f8f8f1);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    border: 1px solid #e4e4e4;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 200px;
+  }
+  
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cardTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .cardImg {
+    max-width: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
 .modal {
     display: none;
     position: fixed;
@@ -27,10 +65,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.3s ease;
   }
   
-  /* Styles pour le contenu de la modal */
   .modal-content {
     background: #fff;
     border-radius: 4px;
@@ -39,13 +75,13 @@
     text-align: center;
     max-width: 500px;
     width: 100%;
+    position: relative;
   }
   
-  /* Style pour le bouton de fermeture de la modal */
   .close {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     font-size: 24px;
     cursor: pointer;
     color: #555;
@@ -53,5 +89,21 @@
   
   .close:hover {
     color: #888;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
   
